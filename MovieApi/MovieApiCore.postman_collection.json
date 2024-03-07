@@ -1,0 +1,944 @@
+{
+	"info": {
+		"_postman_id": "96267244-2153-4ff8-9bfa-0395b4cc657b",
+		"name": "MovieApiCore",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13699723"
+	},
+	"item": [
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "admin",
+					"item": [
+						{
+							"name": "Director",
+							"item": [
+								{
+									"name": "movie director",
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"url": {
+											"raw": "{{movie_base_uri}}/5257/director/3",
+											"host": [
+												"{{movie_base_uri}}"
+											],
+											"path": [
+												"5257",
+												"director",
+												"3"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "movie director NotFound director",
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"url": {
+											"raw": "{{movie_base_uri}}/3/director/0",
+											"host": [
+												"{{movie_base_uri}}"
+											],
+											"path": [
+												"3",
+												"director",
+												"0"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "movie director NotFound movie",
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"url": {
+											"raw": "{{movie_base_uri}}/1?did=3",
+											"host": [
+												"{{movie_base_uri}}"
+											],
+											"path": [
+												"1"
+											],
+											"query": [
+												{
+													"key": "did",
+													"value": "3"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Actors",
+							"item": [
+								{
+									"name": "movie actors",
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[1, 2]\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_uri}}/movies/3/actors",
+											"host": [
+												"{{base_uri}}"
+											],
+											"path": [
+												"movies",
+												"3",
+												"actors"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "movie",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/xml",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Thor: Love and Thunder\",\r\n    \"year\": 2022,\r\n    \"duration\": 120\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{movie_base_uri}}",
+									"host": [
+										"{{movie_base_uri}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2nd movie",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"No Time To Die\",\r\n    \"year\": 2021\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{movie_base_uri}}",
+									"host": [
+										"{{movie_base_uri}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "3d movie",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": " {\r\n        \"title\": \"Nobody\",\r\n        \"year\": 2021\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{movie_base_uri}}",
+									"host": [
+										"{{movie_base_uri}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "movie John Wick",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/xml",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"John Wick\",\r\n    \"year\": 2014\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{movie_base_uri}}",
+									"host": [
+										"{{movie_base_uri}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "movie Not Valid year",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/xml",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Thor: Love and Thunder\",\r\n    \"year\": 1801,\r\n    \"duration\": 120\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{movie_base_uri}}",
+									"host": [
+										"{{movie_base_uri}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "movie Not Valid year required",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/xml",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Thor: Love and Thunder\",\r\n    \"year\": 1801,\r\n    \"duration\": 120\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{movie_base_uri}}",
+									"host": [
+										"{{movie_base_uri}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "movie Not Valid title required",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/xml",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"year\": 2014\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{movie_base_uri}}",
+									"host": [
+										"{{movie_base_uri}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "movie Not Valid title required 2",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/xml",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"\",\r\n    \"year\": 2014\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{movie_base_uri}}",
+									"host": [
+										"{{movie_base_uri}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "movie",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{movie_base_uri}}/1",
+									"host": [
+										"{{movie_base_uri}}"
+									],
+									"path": [
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "movie",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 3,\r\n    \"title\": \"Nobody\",\r\n    \"year\": 2021,\r\n    \"duration\": 92\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_uri}}/movies",
+									"host": [
+										"{{base_uri}}"
+									],
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update movie",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/xml",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 2,\r\n    \"title\": \"No Time To Die\",\r\n    \"year\": 2021,\r\n    \"duration\": 163\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{movie_base_uri}}",
+									"host": [
+										"{{movie_base_uri}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "movie poster 1",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 3,\r\n    \"title\": \"Nobody\",\r\n    \"year\": 2021,\r\n    \"duration\": 92,\r\n    \"posterUri\": \"https://m.media-amazon.com/images/M/MV5BMjM5YTRlZmUtZGVmYi00ZjE2LWIyNzAtOWVhMDk1MDdkYzhjXkEyXkFqcGdeQXVyMjMxOTE0ODA@._V1_FMjpg_UY759_.jpg\",\r\n    \"genres\": [\"Action\", \"Crime\", \"Drama\"]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_uri}}/movies",
+									"host": [
+										"{{base_uri}}"
+									],
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "movie poster 2",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 2,\r\n    \"title\": \"No Time To Die\",\r\n    \"year\": 2021,\r\n    \"posterUri\": \"https://m.media-amazon.com/images/M/MV5BYWQ2NzQ1NjktMzNkNS00MGY1LTgwMmMtYTllYTI5YzNmMmE0XkEyXkFqcGdeQXVyMjM4NTM5NDY@._V1_FMjpg_UY720_.jpg\",\r\n    \"duration\": 2021,\r\n    \"synopsis\": null\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_uri}}/movies",
+									"host": [
+										"{{base_uri}}"
+									],
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "basic",
+						"basic": [
+							{
+								"key": "password",
+								"value": "password",
+								"type": "string"
+							},
+							{
+								"key": "username",
+								"value": "admin",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "all movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{movie_base_uri}}",
+							"host": [
+								"{{movie_base_uri}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movie by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{movie_base_uri}}/1",
+							"host": [
+								"{{movie_base_uri}}"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movie by id NotFound",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{movie_base_uri}}/0",
+							"host": [
+								"{{movie_base_uri}}"
+							],
+							"path": [
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movie by year 1 param",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{movie_base_uri}}/byYearRange?mi=2019",
+							"host": [
+								"{{movie_base_uri}}"
+							],
+							"path": [
+								"byYearRange"
+							],
+							"query": [
+								{
+									"key": "mi",
+									"value": "2019"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movie by year 2 params",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{movie_base_uri}}/byYearRange?mi=2018&ma=2019",
+							"host": [
+								"{{movie_base_uri}}"
+							],
+							"path": [
+								"byYearRange"
+							],
+							"query": [
+								{
+									"key": "mi",
+									"value": "2018"
+								},
+								{
+									"key": "ma",
+									"value": "2019"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movie by title",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{movie_base_uri}}/byTitle?t=Spectre",
+							"host": [
+								"{{movie_base_uri}}"
+							],
+							"path": [
+								"byTitle"
+							],
+							"query": [
+								{
+									"key": "t",
+									"value": "Spectre"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movie by title multiple",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{movie_base_uri}}/byTitle?t=The Man Who Knew Too Much",
+							"host": [
+								"{{movie_base_uri}}"
+							],
+							"path": [
+								"byTitle"
+							],
+							"query": [
+								{
+									"key": "t",
+									"value": "The Man Who Knew Too Much"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movie by title partial",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{movie_base_uri}}/byTitle?t=star",
+							"host": [
+								"{{movie_base_uri}}"
+							],
+							"path": [
+								"byTitle"
+							],
+							"query": [
+								{
+									"key": "t",
+									"value": "star"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "movie by title year",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{movie_base_uri}}/byYearRange?ymin=1982&ymax=1984",
+							"host": [
+								"{{movie_base_uri}}"
+							],
+							"path": [
+								"byYearRange"
+							],
+							"query": [
+								{
+									"key": "ymin",
+									"value": "1982"
+								},
+								{
+									"key": "ymax",
+									"value": "1984"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "password",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "user",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "People",
+			"item": [
+				{
+					"name": "people by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{people_base_uri}}/1",
+							"host": [
+								"{{people_base_uri}}"
+							],
+							"path": [
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "people by id NT FOUND",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{people_base_uri}}/0",
+							"host": [
+								"{{people_base_uri}}"
+							],
+							"path": [
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all artists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{people_base_uri}}",
+							"host": [
+								"{{people_base_uri}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "artist by  name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{people_base_uri}}/byName?n=Odenkirk",
+							"host": [
+								"{{people_base_uri}}"
+							],
+							"path": [
+								"byName"
+							],
+							"query": [
+								{
+									"key": "n",
+									"value": "Odenkirk"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "people",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Bob Odenkirk\",\r\n    \"birthdate\":\"1962-10-22\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{people_base_uri}}",
+							"host": [
+								"{{people_base_uri}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2nd artist ",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Christopher Lloyd\",\r\n    \"birthdate\":\"1938-10-22\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{people_base_uri}}",
+							"host": [
+								"{{people_base_uri}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "artist director",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Ilya Naishuller\",\r\n    \"birthdate\":\"1983-11-19\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{people_base_uri}}",
+							"host": [
+								"{{people_base_uri}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "hostname",
+			"value": "localhost"
+		},
+		{
+			"key": "port",
+			"value": "8080"
+		},
+		{
+			"key": "base_uri",
+			"value": "http://{{hostname}}:{{port}}/api"
+		},
+		{
+			"key": "movie_base_uri",
+			"value": "{{base_uri}}/movie",
+			"type": "string"
+		},
+		{
+			"key": "people_base_uri",
+			"value": "{{base_uri}}/person",
+			"type": "string"
+		}
+	]
+}
