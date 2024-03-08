@@ -8,8 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddDbContext<MovieDbContext>(
     // opt => opt.UseInMemoryDatabase("MovieDb")
-    // opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("dbmovie"))
-    opt => opt.UseNpgsql(builder.Configuration.GetConnectionString("dbmoviepg"))
+    opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("dbmovie"))
 );  
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

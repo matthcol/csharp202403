@@ -42,4 +42,9 @@ Script-Migration -From Mig1 -To Mig2 -Output script.sql (0 is a special migratio
 ### MS SQL Server
 ```
 docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Passw0rd!" -e "MSSQL_PID=Developer" -p 1433:1433  --name dbmovie -d mcr.microsoft.com/mssql/server:2022-latest
+docker exec -it dbmovie bash
+docker exec -it dbmovie bash -c ls -l /opt
 ```
+
+### PostgreSQL
+docker run --name dbmovie-pg -e POSTGRES_PASSWORD=password -e POSTGRES_DB=dbmovie -p 5432:5432 -d postgres:16
